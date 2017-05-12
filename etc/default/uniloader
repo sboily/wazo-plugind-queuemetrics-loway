@@ -2,6 +2,6 @@
 
 # Options to pass to uniloader
 QMLIVE_URI=http://my.queuemetrics-live.com/demo
-QMLIVE_LOGIN=
+QMLIVE_LOGIN=webqloader
 QMLIVE_PASSWORD=
 QMLIVE_ASTERISK_QUEUE=/var/log/asterisk/queue_log
