@@ -1,0 +1,11 @@
+[Unit]
+Description=uniloader queuemetric service
+After=network.target
+
+[Service]
+EnvironmentFile=-/etc/default/uniloader
+ExecStart=/usr/local/bin/uniloader --src=$QMLIVE_ASTERISK_QUEUE upload --uri http://my.queuemetrics-live.com/$QMLIVE_ID --login $QMLIVE_LOGIN --pass $QMLIVE_PASSWORD
+PIDFile=/var/run/uniloader/uniloader.pid
+
+[Install]
+WantedBy=multi-user.target

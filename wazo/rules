@@ -10,6 +10,7 @@ case "$1" in
         BINARY=${pkgdir}/usr/local/bin/uniloader
 
         cp -R etc ${pkgdir}/
+        cp -R lib ${pkgdir}/
         mkdir -p ${pkgdir}/usr/local/bin/
         if [ "${DEB_BUILD_ARCH}" = "i386" ]
         then
