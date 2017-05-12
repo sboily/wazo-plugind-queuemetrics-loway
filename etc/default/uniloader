@@ -1,7 +1,7 @@
 # Default settings for uniloader.
 
 # Options to pass to uniloader
-QMLIVE_ID=
+QMLIVE_URI=http://my.queuemetrics-live.com/demo
 QMLIVE_LOGIN=
 QMLIVE_PASSWORD=
 QMLIVE_ASTERISK_QUEUE=/var/log/asterisk/queue_log
