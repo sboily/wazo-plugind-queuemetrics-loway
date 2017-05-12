@@ -8,7 +8,12 @@ case "$1" in
 
     package)
         cp -R etc ${pkgdir}/
-        cp -R usr ${pkgdir}/
+        if [ "${DEB_BUILD_ARCH}" = "i386" ]
+        then
+            cp -R usr/local/bin/uniloader_386 ${pkgdir}/
+        else
+            cp -R usr/local/bin/uniloader_amd64 ${pkgdir}/
+        fi
         ;;
 
     install)
