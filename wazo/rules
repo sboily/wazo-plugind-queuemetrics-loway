@@ -2,13 +2,14 @@
 # SPDX-License-Identifier: GPL-3.0+
 
 
-BINARY=${pkgdir}/usr/local/bin/uniloader
 
 case "$1" in
     build)
         ;;
 
     package)
+        BINARY=${pkgdir}/usr/local/bin/uniloader
+
         cp -R etc ${pkgdir}/
         if [ "${DEB_BUILD_ARCH}" = "i386" ]
         then
