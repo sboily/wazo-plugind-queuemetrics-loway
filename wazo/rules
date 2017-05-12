@@ -22,9 +22,11 @@ case "$1" in
 
     install)
         mkdir /var/run/uniloader
+        chown wazo-admin-ui.wazo-admin-ui /etc/uniloader/*
         ;;
 
     uninstall)
+        rm -rf /var/run/uniloader
         ;;
 
     *)
