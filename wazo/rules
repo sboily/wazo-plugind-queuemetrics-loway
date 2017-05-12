@@ -10,9 +10,9 @@ case "$1" in
         cp -R etc ${pkgdir}/
         if [ "${DEB_BUILD_ARCH}" = "i386" ]
         then
-            cp -R usr/local/bin/uniloader_386 ${pkgdir}/
+            cp --parents usr/local/bin/uniloader_386 ${pkgdir}/
         else
-            cp -R usr/local/bin/uniloader_amd64 ${pkgdir}/
+            cp --parents usr/local/bin/uniloader_amd64 ${pkgdir}/
         fi
         ;;
 
