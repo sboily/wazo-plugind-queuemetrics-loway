@@ -1,0 +1,11 @@
+name: queuemetrics
+namespace: loway
+version: 0.0.1
+author: Loway
+display_name: Queuemetrics connector
+tags:
+  - loway
+  - application
+  - statistic
+  - callcenter
+homepage: http://queuemetrics.com
