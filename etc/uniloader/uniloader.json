@@ -1,0 +1,11 @@
+[{
+  "uri": "https://my.queuemetrics-live.com/demo",
+  "login": "webqloader",
+  "pass": "demo",
+  "token": "",
+  "matcher": [""],
+  "match": "any",
+  "removematch": false,
+  "disabled": false,
+  "noactions": false
+}]

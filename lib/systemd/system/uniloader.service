@@ -4,7 +4,8 @@ After=network.target
 
 [Service]
 EnvironmentFile=/etc/default/uniloader
-ExecStart=/usr/local/bin/uniloader -s $QMLIVE_ASTERISK_QUEUE upload --uri $QMLIVE_URI --login $QMLIVE_LOGIN --pass $QMLIVE_PASSWORD
+ExecStart=/usr/local/bin/uniloader -s $QMLIVE_ASTERISK_QUEUE upload --splitter $QMLIVE_SPLITTER --pid $QMLIVE_PIDFILE
+PIDFile=/var/run/uniloader/uniloader.pid
 
 [Install]
 WantedBy=multi-user.target

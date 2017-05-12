@@ -1,7 +1,6 @@
 # Default settings for uniloader.
 
 # Options to pass to uniloader
-QMLIVE_URI=http://my.queuemetrics-live.com/demo
-QMLIVE_LOGIN=webqloader
-QMLIVE_PASSWORD=
+QMLIVE_SPLITTER=/etc/uniloader/uniloader.json
 QMLIVE_ASTERISK_QUEUE=/var/log/asterisk/queue_log
+QMLIVE_PIDFILE=/var/run/uniloader/uniloader.pid

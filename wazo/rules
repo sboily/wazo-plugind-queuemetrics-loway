@@ -21,6 +21,7 @@ case "$1" in
         ;;
 
     install)
+        mkdir /var/run/uniloader
         ;;
 
     uninstall)
