@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: GPL-3.0+
 
 
+BINARY=${pkgdir}/usr/local/bin/uniloader
+
 case "$1" in
     build)
         ;;
@@ -10,9 +12,9 @@ case "$1" in
         cp -R etc ${pkgdir}/
         if [ "${DEB_BUILD_ARCH}" = "i386" ]
         then
-            cp --parents usr/local/bin/uniloader_386 ${pkgdir}/
+            cp -a usr/local/bin/uniloader_386 ${BINARY}
         else
-            cp --parents usr/local/bin/uniloader_amd64 ${pkgdir}/
+            cp -a usr/local/bin/uniloader_amd64 ${BINARY}
         fi
         ;;
 
