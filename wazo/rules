@@ -27,18 +27,18 @@ case "$1" in
         chown wazo-admin-ui.wazo-admin-ui /etc/uniloader/*
         LOGGER=/etc/asterisk/logger.conf
         grep -q '^queue_log_to_file = yes' $LOGGER || sed -i '/queue_log/a queue_log_to_file = yes' $LOGGER
+        systemctl restart wazo-admin-ui
         systemctl daemon-reload
         systemctl reload asterisk
-        systemctl restart wazo-admin-ui
         ;;
 
     uninstall)
         rm -rf /var/run/uniloader
         LOGGER=/etc/asterisk/logger.conf
         sed -i '/queue_log_to_file = yes/d' $LOGGER
+        systemctl restart wazo-admin-ui
         systemctl daemon-reload
         systemctl reload asterisk
-        systemctl restart wazo-admin-ui
         ;;
 
     *)
