@@ -37,10 +37,10 @@ case "$1" in
         rm -rf /var/run/uniloader
         LOGGER=/etc/asterisk/logger.conf
         sed -i '/queue_log_to_file = yes/d' $LOGGER
-        systemctl restart wazo-admin-ui
         systemctl disable uniloader
         systemctl daemon-reload
         systemctl reload asterisk
+        systemctl restart wazo-admin-ui
         ;;
 
     *)
