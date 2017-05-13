@@ -4,11 +4,13 @@
 
 case "$1" in
     build)
+        python setup.py bdist
         ;;
 
     package)
         BINARY=${pkgdir}/usr/local/bin/uniloader
 
+        tar xvf dist/wazo_admin_ui_queuemetrics-*.tar.gz -C ${pkgdir}
         cp -R etc ${pkgdir}/
         cp -R lib ${pkgdir}/
         mkdir -p ${pkgdir}/usr/local/bin/
@@ -27,6 +29,7 @@ case "$1" in
         grep -q '^queue_log_to_file = yes' $LOGGER || sed -i '/queue_log/a queue_log_to_file = yes' $LOGGER
         systemctl daemon-reload
         systemctl reload asterisk
+        systemctl restart wazo-admin-ui
         ;;
 
     uninstall)
@@ -35,6 +38,7 @@ case "$1" in
         sed -i '/queue_log_to_file = yes/d' $LOGGER
         systemctl daemon-reload
         systemctl reload asterisk
+        systemctl restart wazo-admin-ui
         ;;
 
     *)
