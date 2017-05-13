@@ -4,6 +4,8 @@
 
 
 import json
+import requests 
+
 from urlparse import urlparse
 
 from flask_menu.classy import register_flaskview
@@ -73,8 +75,16 @@ class QueuemetricsService(object):
 
         with open(configfile, 'w') as outfile:
             json.dump(config, outfile, indent = 4)
+
+        self._restart_uniloader()
         return True
 
     def _read_config(self):
         with open(configfile) as json_data:
             return json.load(json_data)
+
+    def _restart_uniloader(self):
+        uri = 'http://localhost:8668/services'
+        headers = {'content-type': 'application/json'}
+        service = {'uniloader': 'restart'}
+        req = requests.post(uri, data=json.dumps(service), headers=headers)
