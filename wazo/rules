@@ -29,6 +29,8 @@ case "$1" in
         grep -q '^queue_log_to_file = yes' $LOGGER || sed -i '/queue_log/a queue_log_to_file = yes' $LOGGER
         systemctl restart wazo-admin-ui
         systemctl daemon-reload
+        systemctl enable uniloader
+        systemctl stop uniloader
         systemctl reload asterisk
         ;;
 
@@ -37,6 +39,7 @@ case "$1" in
         LOGGER=/etc/asterisk/logger.conf
         sed -i '/queue_log_to_file = yes/d' $LOGGER
         systemctl restart wazo-admin-ui
+        systemctl disable uniloader
         systemctl daemon-reload
         systemctl reload asterisk
         ;;

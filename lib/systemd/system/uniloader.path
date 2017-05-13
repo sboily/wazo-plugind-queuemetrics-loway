@@ -1,0 +1,5 @@
+[Unit]
+Description=Uniloader queuemetric service change config file
+
+[Path]
+PathChanged=/etc/uniloader/uniloader.json
