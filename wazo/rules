@@ -30,7 +30,6 @@ case "$1" in
         systemctl restart wazo-admin-ui
         systemctl daemon-reload
         systemctl enable uniloader
-        systemctl stop uniloader
         systemctl reload asterisk
         ;;
 
