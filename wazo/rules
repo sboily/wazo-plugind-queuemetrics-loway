@@ -31,10 +31,11 @@ case "$1" in
         systemctl daemon-reload
         systemctl enable uniloader
         systemctl reload asterisk
-        ;;
+       ;;
 
     uninstall)
         rm -rf /var/run/uniloader
+        rm -f /etc/wazo-admin-ui/conf.d/050-queuemetrics.yml
         LOGGER=/etc/asterisk/logger.conf
         sed -i '/queue_log_to_file = yes/d' $LOGGER
         systemctl disable uniloader
